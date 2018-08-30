@@ -17,6 +17,38 @@ import java.util.logging.Logger;
  */
 public class StringProcessing {
 
+    
+    private static boolean GENDER_VALID(String gender){
+    if (gender.trim().equalsIgnoreCase("male")){
+    return true;
+    }else if(gender.trim().equalsIgnoreCase("female")){
+    return true;
+    }
+    return false;
+    }
+    
+    private static boolean FNAME_VALID(String firstName){
+    firstName = firstName.trim();
+
+    if(firstName == null || firstName.equals("")){
+        return false;
+    }else if(!firstName.matches("[a-zA-Z]*")){
+        return false;
+    }
+    return true;
+}
+    
+    private static boolean LNAME_VALID(String lastName){
+    lastName = lastName.trim();
+
+    if(lastName == null || lastName.equals("")){
+        return false;
+    }else if(!lastName.matches("[a-zA-Z]*")){
+        return false;
+    }
+    return true;
+}
+    
     /**
      * @param args the command line arguments
      */
@@ -36,9 +68,25 @@ public class StringProcessing {
             //int age;
             String phoneNum = infoLine[4];
             String emmyAddy= infoLine[5];
-            recordsR[currForm] = String.format("%-8s,%-8s,%-7s,%-3s,%-10s,%-40s", firstName,lastName,gender,age,phoneNum,emmyAddy);
+            recordsR[currForm] = String.format("%-20s%-20s,%-7s,%-3s,%-10s,%-40s", firstName,lastName,gender,age,phoneNum,emmyAddy);
             
-            System.out.println(recordsR[currForm]);
+            //System.out.println(recordsR[currForm]);
+            
+            if(FNAME_VALID(firstName)){
+                System.out.println(recordsR[currForm]);
+            }else{
+                System.err.println(String.format("%-20s%-20s,%-7s,%-3s,%-10s,%-40s", firstName,lastName,gender,age,phoneNum,emmyAddy));
+            }
+            if(LNAME_VALID(lastName)){
+                System.out.println(recordsR[currForm]);
+            }else{
+                System.err.println(String.format("%-20s%-20s,%-7s,%-3s,%-10s,%-40s", firstName,lastName,gender,age,phoneNum,emmyAddy));
+            }    
+            if(GENDER_VALID(gender)){
+                System.out.println(recordsR[currForm]);
+            }else{
+                System.err.println(String.format("%-20s%-20s,%-7s,%-3s,%-10s,%-40s", firstName,lastName,gender,age,phoneNum,emmyAddy));
+            }
             
             currForm++;
 
@@ -50,5 +98,6 @@ public class StringProcessing {
         }
     
     }
+    }
     
-}
+
