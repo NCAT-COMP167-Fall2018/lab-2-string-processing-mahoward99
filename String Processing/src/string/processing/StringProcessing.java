@@ -48,7 +48,12 @@ public class StringProcessing {
     }
     return true;
 }
-    
+//    private static boolean AGE_VALID(String age){
+//        
+//    }
+//    
+//    private static boolean PHONY_VALID(String phonyNum){
+//    }
     /**
      * @param args the command line arguments
      */
@@ -72,21 +77,27 @@ public class StringProcessing {
             
             //System.out.println(recordsR[currForm]);
             
-            if(FNAME_VALID(firstName)){
+            if(FNAME_VALID(firstName)&& LNAME_VALID(lastName)&& GENDER_VALID(gender)){
                 System.out.println(recordsR[currForm]);
             }else{
-                System.err.println(String.format("%-20s%-20s,%-7s,%-3s,%-10s,%-40s", firstName,lastName,gender,age,phoneNum,emmyAddy));
+                System.err.println(recordsR[currForm]);
             }
-            if(LNAME_VALID(lastName)){
-                System.out.println(recordsR[currForm]);
-            }else{
-                System.err.println(String.format("%-20s%-20s,%-7s,%-3s,%-10s,%-40s", firstName,lastName,gender,age,phoneNum,emmyAddy));
-            }    
-            if(GENDER_VALID(gender)){
-                System.out.println(recordsR[currForm]);
-            }else{
-                System.err.println(String.format("%-20s%-20s,%-7s,%-3s,%-10s,%-40s", firstName,lastName,gender,age,phoneNum,emmyAddy));
-            }
+            
+//            if(FNAME_VALID(firstName)){
+//                System.out.println(recordsR[currForm]);
+//            }else{
+//                System.err.println(String.format("%-20s%-20s,%-7s,%-3s,%-10s,%-40s", firstName,lastName,gender,age,phoneNum,emmyAddy));
+//            }
+//            if(LNAME_VALID(lastName)){
+//                System.out.println(recordsR[currForm]);
+//            }else{
+//                System.err.println(String.format("%-20s%-20s,%-7s,%-3s,%-10s,%-40s", firstName,lastName,gender,age,phoneNum,emmyAddy));
+//            }    
+//            if(GENDER_VALID(gender)){
+//                System.out.println(recordsR[currForm]);
+//            }else{
+//                System.err.println(String.format("%-20s%-20s,%-7s,%-3s,%-10s,%-40s", firstName,lastName,gender,age,phoneNum,emmyAddy));
+//            }
             
             currForm++;
 
