@@ -48,6 +48,14 @@ public class StringProcessing {
     }
     return true;
 }
+    private static boolean AGE_VALID(String age){
+    }
+    
+    private static boolean PHONY_VALID(String phoneNum){
+    }
+    
+    private static boolean EMMY_VALID(String emmyAddy){
+    }
 //    private static boolean AGE_VALID(String age){
 //        
 //    }
@@ -81,6 +89,7 @@ public class StringProcessing {
                 System.out.println(recordsR[currForm]);
             }else{
                 System.err.println(recordsR[currForm]);
+                
             }
             
 //            if(FNAME_VALID(firstName)){
